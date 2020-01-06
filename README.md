@@ -4,13 +4,13 @@
 
 This repository implements the hierarchical statistical mechanical (HSM) model described in the paper [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning.](nature.com) 
 
-An **associated website** is available at [proteinpeptide.io](proteinpeptide.io). The website is built to facilitate interactions with results from the model including: (1) specific domain-peptide and protein-protein predictions, (2) the resulting networks, and (3) structures colored using the inferred energy functions from the model. Code for the website is available via the parallel repo: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web).
+An **associated website** is available at [proteinpeptide.io](htttps://proteinpeptide.io). The website is built to facilitate interactions with results from the model including: (1) specific domain-peptide and protein-protein predictions, (2) the resulting networks, and (3) structures colored using the inferred energy functions from the model. Code for the website is available via the parallel repo: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web).
 
 This file documents how this package might be [used](#usage), the [location of associated data](#data), and [other metadata](#reference). 
 
 ## Usage
 
-The model was implemented in Python (>= 3.5) primarily using TensorFlow (>= 1.4) ([Software Requirements](#requirements)). To work with this repository, we recommend downloading pre-processed data available at [doi:](figshare.com) into "data/". Alternatively, it is possible to either re-process raw data ([doi:](figshare.com)) or include new data. The folder contains two major directories: `train/` and `predict/`. Each directory is accompanied by a `README.md` file detailing usage. 
+The model was implemented in Python (>= 3.5) primarily using TensorFlow (>= 1.4) ([Software Requirements](#requirements)). To work with this repository, either download pre-processed data (see below) or include new data. The folder contains two major directories: `train/` and `predict/`. Each directory is accompanied by a `README.md` file detailing usage. 
 
 To train / re-train new models, use the `train.py` script in `train/`. To make predictions using a model, use one of two scripts, `predict_domains.py` and `predict_proteins.py`, for predicting either domain-peptide interactions or protein-protein interactions. Scripts are designed with a CLI and should be used from the command line: 
 
@@ -30,9 +30,7 @@ As reported, domain-peptide and protein-protein interactions are available via [
 
 - Raw training data: [figshare - doi:10.6084/m9.figshare.11520297](https://figshare.com/articles/Training_Data_-_Peptide-Binding_Domain-Peptide_Interactions/11520297). Raw domain-peptide training data used to train the core HSM models. Unpack to `data/` in this directory.
 - Pre-processed data: [figshare - doi:10.6084/m9.figshare.11520552](https://figshare.com/articles/Pre-processed_data_-_Git_Repo_-_HSM/11520552). Needed to work with this repo. 
-- Data supporting the website at [proteinpeptide.io](proteinpeptide.io)
-
-
+- Data supporting the website at [proteinpeptide.io](https://proteinpeptide.io)
 
 ## Requirements
 - Python (>= 3.5)
@@ -47,7 +45,7 @@ Please reference the associated publication:
 
 Cunningham, J.M., Koytiger, G., Sorger, P.K., & AlQuraishi, M. "Biophysical prediction of protein-peptide interactions and signaling networks using machine learning." *Nature Methods* (2020). [doi:](https://doi.org/). ([citation.bib](https://raw.githubusercontent.com/aqlaboratory/hsm/misc/citation.bib))
 
-See also, a **website** at [proteinpeptide.io](proteinpeptide.io) for exploring the associated analyses (code: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web)). 
+See also, a **website** at [proteinpeptide.io](https://proteinpeptide.io) for exploring the associated analyses (code: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web)). 
 
 ## Funding
 
