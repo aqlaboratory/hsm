@@ -20,7 +20,7 @@ python [SCRIPT] [OPTIONS]
 
 Options for any script may be listed using the `-h/--help` flag. 
 
-Pre-processed / pre-trained data and models may be downloaded from [(figshare doi:10.6084/m9.figshare.11520552)](https://figshare.com/articles/Pre-processed_data_-_Git_Repo_-_HSM/11520552) and should be unpacked at `data/` in this directory. This directory may also be used as an example of how to structure input and output files / directories.
+Pre-processed / pre-trained data and models may be downloaded from [figshare (doi:10.6084/m9.figshare.11520552)](https://figshare.com/articles/Pre-processed_data_-_Git_Repo_-_HSM/11520552) and should be unpacked at `data/` in this directory. This directory may also be used as an example of how to structure input and output files / directories.
 
 An alternative use case would be to train / re-train a new model in the `train/` code and make new predictions using the `predict/` code. 
 
@@ -28,8 +28,8 @@ An alternative use case would be to train / re-train a new model in the `train/`
 
 As reported, domain-peptide and protein-protein interactions are available via [figshare (doi:10.6084/m9.figshare.10084745)](https://figshare.com/articles/Predictions_-_Domain-Peptide_and_Protein-Protein_Interactions_-_HSM/10084745). In addition, we provide pre-processed data for this repository and the website repository, 
 
-- Raw training data: [(figshare doi:10.6084/m9.figshare.11520297)](https://figshare.com/articles/Training_Data_-_Peptide-Binding_Domain-Peptide_Interactions/11520297). Raw domain-peptide training data used to train the core HSM models. Unpack to `data/` in this directory.
-- Pre-processed data: [(figshare doi:10.6084/m9.figshare.11520552)](https://figshare.com/articles/Pre-processed_data_-_Git_Repo_-_HSM/11520552). Needed to work with this repo. 
+- Raw training data: [figshare - doi:10.6084/m9.figshare.11520297](https://figshare.com/articles/Training_Data_-_Peptide-Binding_Domain-Peptide_Interactions/11520297). Raw domain-peptide training data used to train the core HSM models. Unpack to `data/` in this directory.
+- Pre-processed data: [figshare - doi:10.6084/m9.figshare.11520552](https://figshare.com/articles/Pre-processed_data_-_Git_Repo_-_HSM/11520552). Needed to work with this repo. 
 - Data supporting the website at [proteinpeptide.io](proteinpeptide.io)
 
 
