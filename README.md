@@ -1,6 +1,6 @@
-![HSM Banner Image](misc/symbol_name.large.png)
-
 # hsm - Biophysical prediction of protein-peptide interactions and signaling networks using machine learning. 
+
+<img align="left" src="misc/symbol_name.png" style="width: 25%; height: 25%"/> 
 
 This repository implements the hierarchical statistical mechanical (HSM) model described in the paper [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning.](nature.com) 
 
@@ -10,7 +10,7 @@ This file documents how this package might be [used](#usage), the [location of a
 
 ## Usage
 
-The model was implemented in Python (>= 3.5) primarily using TensorFlow (>= 1.4). Additional package requirements are listed in [requirements.txt](requirements.txt). To work with this repository, we recommend downloading pre-processed data available at [doi:](figshare.com) into "data/". Alternatively, it is possible to either re-process raw data ([doi:](figshare.com)) or include new data. The folder contains two major directories: `train/` and `predict/`. Each directory is accompanied by a `README.md` file detailing usage. 
+The model was implemented in Python (>= 3.5) primarily using TensorFlow (>= 1.4) ([Software Requirements](#requirements)). To work with this repository, we recommend downloading pre-processed data available at [doi:](figshare.com) into "data/". Alternatively, it is possible to either re-process raw data ([doi:](figshare.com)) or include new data. The folder contains two major directories: `train/` and `predict/`. Each directory is accompanied by a `README.md` file detailing usage. 
 
 To train / re-train new models, use the `train.py` script in `train/`. To make predictions using a model, use one of two scripts, `predict_domains.py` and `predict_proteins.py`, for predicting either domain-peptide interactions or protein-protein interactions. Scripts are designed with a CLI and should be used from the command line: 
 
@@ -32,6 +32,14 @@ As reported, domain-peptide and protein-protein interactions are available via [
 - Website data: [figshare/doi:](figshare.com). Data supporting the website at [proteinpeptide.io](proteinpeptide.io)
 
 The data used to the train the model is also provided at a separate data repository: [figshare/doi:](figshare.com). 
+
+## Requirements
+- Python (>= 3.5)
+- TensorFlow (1.14)
+- numpy (1.18)
+- scipy (1.4)
+- scikit-learn (0.20)
+- tqdm (4.41) (Progressbar. Not strictly necessary for functionality; needed to ensure package runs.)
 
 ## Reference
 Please reference the associated publication:
