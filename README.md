@@ -43,7 +43,7 @@ As reported, domain-peptide and protein-protein interactions are available via [
 ## Reference
 Please reference the associated publication:
 
-Cunningham, J.M., Koytiger, G., Sorger, P.K., & AlQuraishi, M. "Biophysical prediction of protein-peptide interactions and signaling networks using machine learning." *Nature Methods* (2020). [doi:10.1038/s41592-019-0687-1](https://doi.org/10.1038/s41592-019-0687-1). ([citation.bib](https://raw.githubusercontent.com/aqlaboratory/hsm/misc/citation.bib))
+Cunningham, J.M., Koytiger, G., Sorger, P.K., & AlQuraishi, M. "Biophysical prediction of protein-peptide interactions and signaling networks using machine learning." *Nature Methods* (2020). [doi:10.1038/s41592-019-0687-1](https://doi.org/10.1038/s41592-019-0687-1). ([citation.bib](misc/citation.bib))
 
 See also, a **website** at [proteinpeptide.io](https://proteinpeptide.io) for exploring the associated analyses (code: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web)). 
 
