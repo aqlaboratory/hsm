@@ -1,5 +1,5 @@
 import os
-import h5py, csv
+import csv
 from collections import *
 from itertools import *
 from tqdm import tqdm as tqdm
