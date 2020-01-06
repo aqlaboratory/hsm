@@ -4,7 +4,7 @@ This directory may be used to make novel domain-peptide or protein-protein inter
 
 # Usage
 
-Predictions are run through one of two scripts, `predict_domains.py` and `predict_proteins.py`, for either domain-peptide or protein-protein predictions. All domain-peptide interactions that comprise a protein-protein prediction are output from the `predict_proteins.py` script. 
+Predictions are run through one of two scripts, `predict_domains.py` and `predict_proteins.py`, for either domain-peptide or protein-protein predictions. All domain-peptide interactions that comprise a protein-protein prediction are output from the `predict_proteins.py` script. By default, data is output to an `outputs/` directory; please create this directory before running. 
 
 ## Domain-Peptide Interaction Predictions
 

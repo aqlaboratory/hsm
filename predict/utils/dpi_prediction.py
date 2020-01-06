@@ -92,7 +92,7 @@ def _slide_interactions(dseq, pseq, weights, peptide_length, amino_acid_ordering
     Computes the likelihood of a sliding-window interaction.
     """
 
-    likelihood_dist = np.array([_compute_interaction(dseq, pseq_subseq, weights, amino_acid_ordering) for pseq_subseq in emit_peptide_sequences(pseq, peptide_lengtht)])
+    likelihood_dist = np.array([_compute_interaction(dseq, pseq_subseq, weights, amino_acid_ordering) for pseq_subseq in emit_peptide_sequences(pseq, peptide_length)])
     
     no_bind = np.prod(1-likelihood_dist)
 
@@ -101,6 +101,6 @@ def _slide_interactions(dseq, pseq, weights, peptide_length, amino_acid_ordering
 
 def domain_peptide_interaction_prediction(domain_sequence, peptide_sequence, weights, domain_length, peptide_length, is_fixed, amino_acid_ordering):
     if is_fixed:
-        return _compute_interaction(domain_sequence, pseq, weights, amino_acid_ordering)
+        return _compute_interaction(domain_sequence, peptide_sequence, weights, amino_acid_ordering)
     else:
         return _slide_interactions(domain_sequence, peptide_sequence, weights, peptide_length, amino_acid_ordering)

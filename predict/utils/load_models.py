@@ -7,6 +7,14 @@ import numpy as np
 
 from . import dpi_prediction
 
+"""
+File contains functions for loading in all available models.
+Primary function is load_models_from_dir which returns a nested dict mapping 
+domain type -> peptide type -> prediction function, taken from dpi_prediction.
+This is output in the ModelsSpecificationFormat
+"""
+
+
 def _load_model(model_fpath, domain_len, peptide_len, is_fixed, amino_acid_ordering):
     # TODO: load models
     arr_archive = np.load(model_fpath)

@@ -11,10 +11,10 @@ def is_valid(i, j, domain_metadata, peptide_metadata, models):
     def _is_valid_oneway(domains, peptides):
         dtypes = set(d[0] for d in domains)
         valid_ptypes = set(p for d in dtypes for p in models.models[d].keys())
-        
-        ptypes = set(p[0] for p in domains)
-        return len(ptypes.intersection(valid_ptypes)) > 0
 
+        ptypes = set(p[0] for p in peptides)
+        return len(ptypes.intersection(valid_ptypes)) > 0
+    
     return _is_valid_oneway(di,pj) or _is_valid_oneway(dj,pi)
 
 @timeout(2)
