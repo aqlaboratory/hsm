@@ -1,6 +1,6 @@
-![HSM Banner Image](misc/symbol_name.large.png)
-
 # hsm - Biophysical prediction of protein-peptide interactions and signaling networks using machine learning. 
+
+<img align="left" src="misc/symbol_name.png" style="width: 25%; height: 25%"/> 
 
 This repository implements the hierarchical statistical mechanical (HSM) model described in the paper [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning.](nature.com) 
 
