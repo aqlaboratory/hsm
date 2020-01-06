@@ -18,7 +18,7 @@ Additional options for using either script may be listed using the `-h/--help` f
 The basic steps for predicting a new interaction is:
 ### 0. Pre-process data and models.
 
-By default, the code assumes that models are located at `predict/models/` and pre-processed data, which can be downloaded from [figshare (doi:10.6084/m9.figshare.11520552)](https://figshare.com/articles/Pre-processed_data_-_Git_Repo_-_HSM/11520552), should be available at `data/predict`. New data must be passed explicitly to the code (see the next section). Output model files should be the same as formatted by `output_models.py` in the `train/` directory. 
+By default, the code assumes that models are located at `predict/models/` and pre-processed data, which can be downloaded from [figshare (doi:10.6084/m9.figshare.11520552)](https://doi.org/10.6084/m9.figshare.11520552), should be available at `data/predict`. New data must be passed explicitly to the code (see the next section). Output model files should be the same as formatted by `output_models.py` in the `train/` directory. 
 
 Input domains files should have the format:
 ```
@@ -59,7 +59,7 @@ Additional options for using either script may be listed using the `-h/--help` f
 
 ## 0. Pre-process data and models.
 
-By default, the `predict_proteins.py` script also assumes models are located at `predict/models/` and pre-processed data, which can be downloaded via [figshare (doi:10.6084/m9.figshare.11520552)](https://figshare.com/articles/Pre-processed_data_-_Git_Repo_-_HSM/11520552), are available at `data/metadata`. New data must be passed explicitly to the code (see the next section). The same models files may be used in both domain-peptide and protein-protein interaction prediction. To use new models, the same steps to specify the new models must be passed to `predict_proteins.py`. In addition, the models requiire metadata files (by default, stored in `data/metadata`) that describe either the domain or peptide composition of proteins. Metadata are formatted as Python dictionaries (stored as pickle'd files) with the format: 
+By default, the `predict_proteins.py` script also assumes models are located at `predict/models/` and pre-processed data, which can be downloaded via [figshare (doi:10.6084/m9.figshare.11520552)](https://doi.org/10.6084/m9.figshare.11520552), are available at `data/metadata`. New data must be passed explicitly to the code (see the next section). The same models files may be used in both domain-peptide and protein-protein interaction prediction. To use new models, the same steps to specify the new models must be passed to `predict_proteins.py`. In addition, the models requiire metadata files (by default, stored in `data/metadata`) that describe either the domain or peptide composition of proteins. Metadata are formatted as Python dictionaries (stored as pickle'd files) with the format: 
 
 ## 1. Run predictions
 
