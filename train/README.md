@@ -1,6 +1,8 @@
 # Description
 
-This directory may be used to train / re-train new models using the HSM framework.  **Note**, by default, data are assumed to be at `../data/` downloaded as detailed in the `README.md` file of the parent directory. 
+This directory may be used to train / re-train new models using the HSM framework.  
+
+**Note**, by default, data are assumed to be at `../data/` downloaded as detailed in the `README.md` file of the parent directory. In addition, results are output to an `output/` directory by default. This should be created.   
 
 # Usage
 
