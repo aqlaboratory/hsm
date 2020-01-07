@@ -4,7 +4,7 @@
 
 This repository implements the hierarchical statistical mechanical (HSM) model described in the paper [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning.](https://doi.org/10.1038/s41592-019-0687-1) 
 
-An **associated website** is available at [proteinpeptide.io](proteinpeptide.io). The website is built to facilitate interactions with results from the model including: (1) specific domain-peptide and protein-protein predictions, (2) the resulting networks, and (3) structures colored using the inferred energy functions from the model. Code for the website is available via the parallel repo: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web).
+An **associated website** is available at [proteinpeptide.io](http://proteinpeptide.io). The website is built to facilitate interactions with results from the model including: (1) specific domain-peptide and protein-protein predictions, (2) the resulting networks, and (3) structures colored using the inferred energy functions from the model. Code for the website is available via the parallel repo: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web).
 
 This file documents how this package might be [used](#usage), the [location of associated data](#data), and [other metadata](#reference). 
 
@@ -30,7 +30,7 @@ As reported, domain-peptide and protein-protein interactions are available via [
 
 - Raw training data: [figshare - doi:10.6084/m9.figshare.11520297](https://doi.org/10.6084/m9.figshare.11520297). Raw domain-peptide training data used to train the core HSM models. Unpack to `data/` in this directory.
 - Pre-processed data: [figshare - doi:10.6084/m9.figshare.11520552](https://doi.org/10.6084/m9.figshare.11520552). Needed to work with this repo. 
-- Data supporting the website at [proteinpeptide.io](proteinpeptide.io)
+- Data supporting the website at [proteinpeptide.io](http://proteinpeptide.io)
 
 ## Requirements
 - Python (>= 3.5)
@@ -45,7 +45,7 @@ Please reference the associated publication:
 
 Cunningham, J.M., Koytiger, G., Sorger, P.K., & AlQuraishi, M. "Biophysical prediction of protein-peptide interactions and signaling networks using machine learning." *Nature Methods* (2020). [doi:10.1038/s41592-019-0687-1](https://doi.org/10.1038/s41592-019-0687-1). ([citation.bib](misc/citation.bib))
 
-See also, a **website** at [proteinpeptide.io](proteinpeptide.io) for exploring the associated analyses (code: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web)). 
+See also, a **website** at [proteinpeptide.io](http://proteinpeptide.io) for exploring the associated analyses (code: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web)). 
 
 ## Funding
 
