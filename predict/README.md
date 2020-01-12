@@ -8,7 +8,7 @@ Predictions are run through one of two scripts, `predict_domains.py` and `predic
 
 ## Domain-Peptide Interaction Predictions
 
-Code used for predicting domain-peptide interactions is located in the predict/ directory in this repository. The functionality should primarily be accessed via the predict\_domains.py script.
+Code used for predicting domain-peptide interactions is located in the predict/ directory in this repository. The functionality should primarily be accessed via the `predict_domains.py` script.
 
 ```python
 python predict_domains.py [INPUT DOMAINS METADATA] [INPUT PEPTIDES METADATA] [OPTIONS] 
@@ -18,7 +18,7 @@ Additional options for using either script may be listed using the `-h/--help` f
 The basic steps for predicting a new interaction is:
 ### 0. Pre-process data and models.
 
-By default, the code assumes that models are located at `predict/models/` and pre-processed data, which can be downloaded (see [Data section](#data)), are available at `data/metadata`. New data must be passed explicitly to the code (see the next section). Output model files should be the same as formatted by `output_models.py` in the `train/` directory. 
+By default, the code assumes that models are located at `predict/models/` and pre-processed data, which can be downloaded from [figshare (doi:10.6084/m9.figshare.11520552)](https://doi.org/10.6084/m9.figshare.11520552), should be available at `data/predict`. New data must be passed explicitly to the code (see the next section). Output model files should be the same as formatted by `output_models.py` in the `train/` directory. 
 
 Input domains files should have the format:
 ```
@@ -50,7 +50,7 @@ The domain and peptide alignment lengths refer to the domain / peptide alignment
 
 ## Protein-Protein Interaction Predictions
 
-Code used for predicting protein-protein interactions is located in the predict/ directory in this repository. The functionality should primarily be accessed via the predict\_proteins.py script.
+Code used for predicting protein-protein interactions is located in the predict/ directory in this repository. The functionality should primarily be accessed via the `predict_proteins.py` script.
 
 ```python
 python predict_proteins.py [-p [INPUT PPI PAIRS]] [OPTIONS] 
@@ -59,13 +59,13 @@ Additional options for using either script may be listed using the `-h/--help` f
 
 ## 0. Pre-process data and models.
 
-By default, the `predict_proteins.py` script also assumes models are located at `predict/models/` and pre-processed data, which can be downloaded (see [Data section](#data)), are available at `data/metadata`. New data must be passed explicitly to the code (see the next section). The same models files may be used in both domain-peptide and protein-protein interaction prediction. To use new models, the same steps to specify the new models must be passed to `predict_proteins.py`. In addition, the models requiire metadata files (by default, stored in `data/metadata`) that describe either the domain or peptide composition of proteins. Metadata are formatted as Python dictionaries (stored as pickle'd files) with the format: 
+By default, the `predict_proteins.py` script also assumes models are located at `predict/models/` and pre-processed data, which can be downloaded via [figshare (doi:10.6084/m9.figshare.11520552)](https://doi.org/10.6084/m9.figshare.11520552), are available at `data/metadata`. New data must be passed explicitly to the code (see the next section). The same models files may be used in both domain-peptide and protein-protein interaction prediction. To use new models, the same steps to specify the new models must be passed to `predict_proteins.py`. In addition, the models requiire metadata files (by default, stored in `data/metadata`) that describe either the domain or peptide composition of proteins. Metadata are formatted as Python dictionaries (stored as pickle'd files) with the format: 
 
 ## 1. Run predictions
 
 Predictions can be computed using the described script:
 
 ```python
-python predict_proteins.py [-p [INPUT PPI PAIRS]] [OPTIONS] 
+python predict_proteins.py [--ppi_pairs [INPUT PPI PAIRS]] [OPTIONS] 
 ```
-The `INPUT PPI PAIRS` option (passed using `-p / --ppi_pairs`) passed to the code denotes a csv file containing the proteins to predict. These pairs should be formatted as a csv file where each line contains a pair of protein IDs (`<ID 1>,<ID 2>`). These IDs should reference IDs in the metadata files. If no pairs are passed, all valid pairs are returned. Different metadata files may be passed in using the `--domain_metadata` and `--peptide_metadata` options.  
+The `INPUT PPI PAIRS` option (passed using `--ppi_pairs`) passed to the code denotes a csv file containing the proteins to predict. These pairs should be formatted as a csv file where each line contains a pair of protein IDs (`<ID 1>,<ID 2>`). These IDs should reference IDs in the metadata files. If no pairs are passed, all valid pairs are returned. Different metadata files may be passed in using the `--domain_metadata` and `--peptide_metadata` options.  
