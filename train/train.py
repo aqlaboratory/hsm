@@ -171,14 +171,14 @@ def get_model(args, opts):
         model_formats = _match_model(opts.domains[0], possible_models)
         model_type = models.hsm_id.HSMIndependentDomainsModel
         input_directories = os.path.join(opts.input_directory, model_formats.directory) 
-    elif len(opts.domains) == 1:
-        model_formats = _match_model(opts.domains[0], possible_models)
-        model_type = models.hsm_d_singledomain.HSMSingleDomainsModel
-        input_directories = os.path.join(opts.input_directory, model_formats.directory) 
     elif opts.include_all_domains:
         model_formats =  model_formats_ifile
         model_type = models.hsm_d.HSMDomainsModel
         input_directories = opts.input_directory
+    elif len(opts.domains) == 1:
+        model_formats = _match_model(opts.domains[0], possible_models)
+        model_type = models.hsm_d_singledomain.HSMSingleDomainsModel
+        input_directories = os.path.join(opts.input_directory, model_formats.directory) 
     else:
         model_formats = [_match_model(d, possible_models) for d in opts.domains]
         model_type = models.hsm_d.HSMDomainsModel

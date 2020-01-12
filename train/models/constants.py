@@ -7,7 +7,7 @@ DEF_lambda = 1e-5
 DEF_learning_rate = 1e-4
 DEF_init_std = 1e-2
 DEF_epochs = 100
-DEF_validate_step = 10
+DEF_validate_step = 100
 DEF_chunk_size = 512
 
 DEF_basis_size = 100
