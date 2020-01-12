@@ -29,7 +29,7 @@ An alternative use case would be to train / re-train a new model in the `train/`
 As reported, domain-peptide and protein-protein interactions are available via [figshare (doi:10.6084/m9.figshare.10084745)](https://doi.org/10.6084/m9.figshare.10084745). In addition, we provide pre-processed data for this repository and the website repository, 
 
 - Raw training data: [figshare - doi:10.6084/m9.figshare.11520297](https://doi.org/10.6084/m9.figshare.11520297). Raw domain-peptide training data used to train the core HSM models. Unpack to `data/` in this directory.
-- Pre-processed data: [figshare - doi:10.6084/m9.figshare.11520552](https://doi.org/10.6084/m9.figshare.11520552). Needed to work with this repo. 
+- Pre-processed data: [figshare - doi:10.6084/m9.figshare.11520552](https://doi.org/10.6084/m9.figshare.11520552). Needed to work with this repo. Unpack to `data/` in this directory.
 - Data supporting the website at [proteinpeptide.io](https://proteinpeptide.io)
 
 ## Requirements
