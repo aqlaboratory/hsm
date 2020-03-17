@@ -6,6 +6,8 @@ This directory may be used to make novel domain-peptide or protein-protein inter
 
 Predictions are run through one of two scripts, `predict_domains.py` and `predict_proteins.py`, for either domain-peptide or protein-protein predictions. All domain-peptide interactions that comprise a protein-protein prediction are output from the `predict_proteins.py` script. By default, data is output to an `outputs/` directory; please create this directory before running. 
 
+Before using the pre-trained models (released in `models/`, please refer to the **Pre-trained Models** section, below.
+
 ## Domain-Peptide Interaction Predictions
 
 Code used for predicting domain-peptide interactions is located in the predict/ directory in this repository. The functionality should primarily be accessed via the `predict_domains.py` script.
@@ -69,3 +71,20 @@ Predictions can be computed using the described script:
 python predict_proteins.py [--ppi_pairs [INPUT PPI PAIRS]] [OPTIONS] 
 ```
 The `INPUT PPI PAIRS` option (passed using `--ppi_pairs`) passed to the code denotes a csv file containing the proteins to predict. These pairs should be formatted as a csv file where each line contains a pair of protein IDs (`<ID 1>,<ID 2>`). These IDs should reference IDs in the metadata files. If no pairs are passed, all valid pairs are returned. Different metadata files may be passed in using the `--domain_metadata` and `--peptide_metadata` options.  
+
+## Pre-trained Models
+Released with this codebase are pre-trained models for using HSM / D to make novel predictions. The code assumes that the input sequences are correctly aligned.  
+
+Models were trained using the domain alignments released with this codebase (in the `domain_metadata.csv` file in `predictions.tar.gz` in the [figshare (doi:10.6084/m9.figshare.11520552)](https://doi.org/10.6084/m9.figshare.11520552) repository. 
+
+Peptides are aligned as follows:
+
+| **Peptidic-type** | **Alignment** |
+| ---------- | ---------------- |
+| phosphosite | A 15 residue window aligned on the central phosphotyrosine. For example, `AAAAAAAyAAAAAAA`.|
+| C-terminal | A 6 residue windo aligned (to the right) on the C-terminus. For example, `AAAAAA`. Note, alignment offsets should be to the right (*e.g.* `AAAA` would become `--AAAA`).|
+| polyproline | Any residue sequence. polyproline peptides are "scanning", or the likelihood is computed over the whole sequence.|
+
+`A` denotes any amino acid. 
+
+Note, using a different domain alignment and / or peptidic alignment (for 'fixed' peptides) results in predictions that are meaningless within the context of the model.
