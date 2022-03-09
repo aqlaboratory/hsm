@@ -24,6 +24,10 @@ Pre-processed / pre-trained data and models may be downloaded from [figshare (do
 
 An alternative use case would be to train / re-train a new model in the `train/` code and make new predictions using the `predict/` code. 
 
+### Kinase model issue
+
+We have identified an issue in the dataset used to train the kinase model. For the time being, we suggest not using the kinase model until further updates are provided.
+
 ## Data
 
 As reported, domain-peptide and protein-protein interactions are available via [figshare (doi:10.6084/m9.figshare.10084745)](https://doi.org/10.6084/m9.figshare.10084745). In addition, we provide pre-processed data for this repository and the website repository, 
