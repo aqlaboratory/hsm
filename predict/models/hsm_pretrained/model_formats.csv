@@ -1,8 +1,8 @@
-PTP,phosphosite,146,15,1,PTP.npz
-PTB,phosphosite,94,15,1,PTB.npz
-Kinase_TK,phosphosite,190,15,1,Kinase_TK.npz
-SH3,polyproline,51,16,0,SH3.npz
 SH2,phosphosite,92,15,1,SH2.npz
-PDZ,c-terminus,75,6,1,PDZ.npz
-WW,polyproline,32,13,0,WW.npz
 WH1,polyproline,105,8,0,WH1.npz
+WW,polyproline,32,13,0,WW.npz
+PTB,phosphosite,94,15,1,PTB.npz
+PDZ,c-terminus,75,8,1,PDZ.npz
+Kinase_TK,phosphosite,192,15,1,Kinase_TK.npz
+SH3,polyproline,51,16,0,SH3.npz
+PTP,phosphosite,146,15,1,PTP.npz
