@@ -68,11 +68,11 @@ def create_parser():
 
     # Input / output data processing.
     input_output_group = parser.add_argument_group(title="Input/output group")
-    input_output_group.add_argument("-i", "--input_directory", type=str, default="../data/train/hsm_preprocessed/",
+    input_output_group.add_argument("-i", "--input_directory", type=str, default="../data/data_without_processed_duplicates/vectorized_data/",
             help="Input data directory. The form of this directory should be the same as output by convert_binding_data.py")
     input_output_group.add_argument("-o", "--output_directory", type=str, default="outputs/", 
             help="Location to output data to.")
-    input_output_group.add_argument("--amino_acids_ordering", type=str, default="../data/amino_acid_ordering.txt",
+    input_output_group.add_argument("--amino_acids_ordering", type=str, default="../amino_acid_ordering.txt",
             help="Amino acid ordering file. Allows user to add new amino acids (e.g. phospho-ser/thr).")
 
     # Model specific arguments:
@@ -172,7 +172,7 @@ def get_model(args, opts):
         model_type = models.hsm_id.HSMIndependentDomainsModel
         input_directories = os.path.join(opts.input_directory, model_formats.directory) 
     elif opts.include_all_domains:
-        model_formats =  model_formats_ifile
+        model_formats = all_models
         model_type = models.hsm_d.HSMDomainsModel
         input_directories = opts.input_directory
     elif len(opts.domains) == 1:

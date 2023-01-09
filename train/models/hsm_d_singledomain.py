@@ -194,14 +194,16 @@ class HSMSingleDomainsModel(object):
         train_data, test_data = utils.split_data(data_directory, self.validation_chunk, include_all=self.include_all_data, excluded_chunks=self.exclude_indices, n_folds=self.n_folds, seed=self.data_split_seed)
         data_iterator = utils.training_iterator(train_data, chunk_size=self.chunk_size)
 
-        self.costs = list() 
+        self.costs = list()
+        self.aucs = list() 
         for epoch in tqdm(range(self.epochs), desc="Epochs"):
             epoch_costs = self.optimize_step(next(data_iterator))
             self.costs.append(epoch_costs)
             
             if (epoch + 1) % self.validate_step == 0:
                 _, _, auc = self.predict(test_data)
-                print("AUC: {0} (Epoch: {1})".format(epoch+1, auc))
+                self.aucs.append(auc)
+                print("Epoch: {0} (AUC: {1})".format(epoch+1, auc))
 
         self.final_predictions = self.predict(test_data)
 

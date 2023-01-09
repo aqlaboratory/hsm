@@ -133,7 +133,7 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("input_data_file", type=str)
     parser.add_argument("output_data_directory", type=str)
-    parser.add_argument("-a", "--amino_acid_ordering", type=str, default="../data/amino_acid_ordering.txt")
+    parser.add_argument("-a", "--amino_acid_ordering", type=str, default="../amino_acid_ordering.txt")
     parser.add_argument("-p", "--progressbar", action='store_true', default=False)
     opts = parser.parse_args()
 

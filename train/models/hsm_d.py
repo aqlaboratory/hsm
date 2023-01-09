@@ -232,6 +232,22 @@ class HSMDomainsModel(object):
             # Get domain-specific predict_op and predict.
             predict_op = self.predict_ops[(dtype, ptype)]
             predictions = self.sess.run(predict_op, feed_dict=feed_dict)
+
+            """
+            # Realized this is unneccessary debugging -- was running on
+            # an unstable GPU (2 on exx1)
+            print(predictions)
+            nanpreds = np.isnan(predictions)
+            if sum(nanpreds) >= 1:
+               print("Predictions contain nan", predictions[nanpreds])
+            posinfpreds = np.isposinf(predictions)
+            if sum(posinfpred) >= 1:
+               print("Predictions contain +inf", predictions[posinfpreds])
+            neginfpreds = np.isneginf(predictions)
+            if sum(neginfpreds) >= 1:
+               print("Predictions contain -inf", predictions[neginfpreds])
+            """
+
             roc_auc = roc_auc_score(binds, predictions) 
             
             predictions_dct[(dtype, ptype)] = (binds, predictions, roc_auc)
@@ -267,6 +283,8 @@ class HSMDomainsModel(object):
             data_iterators_dct[(dtype, ptype)] = utils.training_iterator(train_data, nchunks=n_chunks)
 
         self.costs = list() 
+        self.aucs = list()
+        self.aucs_per_dp = list()
         for epoch in tqdm(range(self.epochs), desc="Epochs"):
             epoch_iters_dct = {k:next(v) for k,v in data_iterators_dct.items()}
             epoch_costs = self.optimize_step(epoch_iters_dct, n_chunks)
@@ -274,16 +292,21 @@ class HSMDomainsModel(object):
             
             if (epoch + 1) % self.validate_step == 0:
                 _perf = self.predict(test_data_dct)
+                perf_dct = dict()
                 for (dtype, ptype), (_, _, auc) in _perf.items():
-                    print("AUC: {0} (Epoch: {1}; Domain: {2}, Peptide: {3})".format(epoch+1, auc, dtype, ptype))
+                    print("Epoch: {0} (AUC: {1}; Domain: {2}, Peptide: {3})".format(epoch+1, auc, dtype, ptype))
+                    perf_dct['%s_%s' % (dtype, ptype)] = auc
+                    self.aucs.append(auc)
+                self.aucs_per_dp.append(perf_dct)
 
         self.final_predictions = self.predict(test_data_dct)
 
-    def save_model(self, output_directory):
+    def save_model(self, output_directory, label=None):
         """
-        Save model outputs from a trained model. The output files are of the form: <id>.<spec>.<ext>
-        The id is defined as the current time (as a string). The spec defines the output, either metadata
-        or the domain type of output. ext is the file extension, either a numpy file or a json file.
+        Save model outputs from a trained model. The output files are of the form: <id>.<optional_label>.<spec>.<ext>
+        The id is defined as the current time (as a string). An optional label istring can be supplied.
+        The spec defines the output, either metadata or the domain type of output. ext is the file
+        extension, either a numpy file or a json file.
 
         args:
             - output_directory: a string defining a directory to output the saved model to.  
@@ -291,6 +314,7 @@ class HSMDomainsModel(object):
         import time        
         
         model_output_id = str(time.time()).replace("-", "_")
+        if label is not None: model_output_id = model_output_id+'.'+label
         
         # Metadata. Saved as dict (to JSON file) with four keys defining model type, 
         # model format, the results of the last prediction, and parameters

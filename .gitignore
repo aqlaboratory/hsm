@@ -1,6 +1,8 @@
 data/
 analysis/
 
+.DS_Store
+
 #####################################
 # Standard Python .gitignore commands 
 # below this point - JMC
