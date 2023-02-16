@@ -4,13 +4,13 @@
 
 This repository implements the hierarchical statistical mechanical (HSM) model described in the paper [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning.](https://doi.org/10.1038/s41592-019-0687-1) 
 
-An **associated website** is available at [proteinpeptide.io](https://proteinpeptide.io). The website is built to facilitate interactions with results from the model including: (1) specific domain-peptide and protein-protein predictions, (2) the resulting networks, and (3) structures colored using the inferred energy functions from the model. Code for the website is available via the parallel repo: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web).
+An **associated website** is available at [proteinpeptide.io](https://proteinpeptide.io). The website is built to facilitate interactions with results from the model including: (1) specific domain-peptide and protein-protein predictions, (2) the resulting networks, and (3) structures colored using the inferred energy functions from the model. Code for the website is available via the parallel repo: [aqlaboratory/hsm-web](https://github.com/aqlaboratory/hsm-web). Note that the results on the website were obtained using an [old model](#model-updates).
 
 This file documents how this package might be [used](#usage), the [location of associated data](#data), and [other metadata](#reference). 
 
 ## Usage
 
-The model was implemented in Python (>= 3.5) primarily using TensorFlow (>= 1.4) ([Software Requirements](#requirements)). To work with this repository, either download pre-processed data (see below) or include new data. The folder contains two major directories: `train/` and `predict/`. Each directory is accompanied by a `README.md` file detailing usage. 
+The model was implemented in Python (>= 3.5) primarily using TensorFlow (>= 1.14) ([Software Requirements](#requirements)). To work with this repository, either download pre-processed data (see below) or include new data. The folder contains three major directories: `train/`, `predict/`, and `publication_analysis/`. Each directory is accompanied by a `README.md` file detailing usage. 
 
 To train / re-train new models, use the `train.py` script in `train/`. To make predictions using a model, use one of two scripts, `predict_domains.py` and `predict_proteins.py`, for predicting either domain-peptide interactions or protein-protein interactions. Scripts are designed with a CLI and should be used from the command line: 
 
@@ -18,23 +18,20 @@ To train / re-train new models, use the `train.py` script in `train/`. To make p
 python [SCRIPT] [OPTIONS]
 ```
 
-Options for any script may be listed using the `-h/--help` flag. 
+Options for any script may be listed using the `-h/--help` flag.
 
-Pre-processed / pre-trained data and models may be downloaded from [figshare (doi:10.6084/m9.figshare.11520552)](https://doi.org/10.6084/m9.figshare.11520552) and should be unpacked at `data/` in this directory. This directory may also be used as an example of how to structure input and output files / directories.
+To reproduce analysis and figures presented in the paper [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning.](https://doi.org/10.1038/s41592-019-0687-1), use the scripts in `publication_analysis/`.
 
-An alternative use case would be to train / re-train a new model in the `train/` code and make new predictions using the `predict/` code. 
+Pre-trained models are released with this repo. An alternative use case would be to train / re-train a new model in the `train/` code and make new predictions using the `predict/` code. 
 
-### Kinase model issue
+### Model updates
 
-We have identified an issue in the dataset used to train the kinase model. For the time being, we suggest not using the kinase model until further updates are provided.
+We identified an issue in the original datasets used to train the model published in [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning.](https://doi.org/10.1038/s41592-019-0687-1). As of February 15, 2023, we have corrected the datasets (released on [figshare (doi:10.6084/m9.figshare.22105529)](https://doi.org/10.6084/m9.figshare.22105529)), and replaced the original models released with this repo with corrected ones. Please verify that you use the corrected models for all predictions (see documentation in `predict/`).
 
 ## Data
 
-As reported, domain-peptide and protein-protein interactions are available via [figshare (doi:10.6084/m9.figshare.10084745)](https://doi.org/10.6084/m9.figshare.10084745). In addition, we provide pre-processed data for this repository and the website repository, 
+All associated data may be downloaded from [figshare (doi:10.6084/m9.figshare.22105529)](https://doi.org/10.6084/m9.figshare.22105529).
 
-- Raw training data: [figshare - doi:10.6084/m9.figshare.11520297](https://doi.org/10.6084/m9.figshare.11520297). Raw domain-peptide training data used to train the core HSM models. Unpack to `data/` in this directory.
-- Pre-processed data: [figshare - doi:10.6084/m9.figshare.11520552](https://doi.org/10.6084/m9.figshare.11520552). Needed to work with this repo. Unpack to `data/` in this directory.
-- Data supporting the website at [proteinpeptide.io](https://proteinpeptide.io)
 
 ## Requirements
 - Python (>= 3.5)
@@ -43,6 +40,7 @@ As reported, domain-peptide and protein-protein interactions are available via [
 - scipy (1.4)
 - scikit-learn (0.20)
 - tqdm (4.41) (Progressbar. Not strictly necessary for functionality; needed to ensure package runs.)
+
 
 ## Reference
 Please reference the associated publication:
