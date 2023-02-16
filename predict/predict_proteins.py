@@ -52,8 +52,8 @@ if __name__=='__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--ppi_pairs", type=str, default=None)
-    parser.add_argument("--domain_metadata", type=str, default="../data/predict/domain_metadata.csv")
-    parser.add_argument("--peptide_metadata", type=str, default="../data/predict/peptide_metadata.csv")
+    parser.add_argument("--domain_metadata", type=str, default="../data/ppi_data/metadata/domain_metadata.csv")
+    parser.add_argument("--peptide_metadata", type=str, default="../data/ppi_data/metadata/peptide_metadata.csv")
     parser.add_argument("--output_ppi_prediction", type=str, default="outputs/ppi_predictions.csv",
             help="Output file for PPI predictions. Output is a csv file with format <ID 1>,<ID 2>,<PPI Likelihood>.")
     parser.add_argument("--output_dpi_prediction", type=str, default="outputs/dpi_predictions.txt",
