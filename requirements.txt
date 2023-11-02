@@ -1,0 +1,5 @@
+tensorflow == 1.14
+numpy == 1.18
+scipy == 1.4
+scikit-learn == 0.20
+tqdm == 4.41
