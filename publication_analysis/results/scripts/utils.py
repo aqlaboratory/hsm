@@ -60,11 +60,16 @@ def load_model_threshold_fpr(directory):
       mdict[k] = np.loadtxt(os.path.join(directory, f), skiprows=1, delimiter=',')
    return mdict
 
-def load_prots(fname):
+def load_prots(fname, deduplicate=True, strip_isoform=True):
    "Load protein pairs from csv file."
    prots2d = np.loadtxt(fname, delimiter=',', usecols=(0,1), dtype=str)
-   prots2d = strip_isoform_uniprotid(prots2d)
+   if strip_isoform: prots2d = strip_isoform_uniprotid(prots2d)
    prots1d = np.array([','.join(sorted(prot)) for prot in prots2d])
+
+   if deduplicate:
+      _, m = np.unique(prots1d, return_index=True)
+      prots1d = prots1d[m]
+      prots2d = prots2d[m]
 
    return prots1d, prots2d
 
