@@ -1,4 +1,8 @@
-# hsm - Biophysical prediction of protein-peptide interactions and signaling networks using machine learning. 
+# Notice - Corrected models and datasets
+
+We identified an issue in the original datasets used to train the model published in [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning](https://doi.org/10.1038/s41592-019-0687-1). We have released corrected datasets on [figshare (doi:10.6084/m9.figshare.22105529)](https://doi.org/10.6084/m9.figshare.22105529) (published on February 16, 2023), and replaced the original models released with this repo with corrected ones (on January 9, 2023). Please verify that you use the corrected models for all predictions (see documentation in `predict/`).
+
+# HSM - Biophysical prediction of protein-peptide interactions and signaling networks using machine learning. 
 
 <img align="left" src="misc/symbol_name.png" style="width: 25%; height: 25%"/> 
 
@@ -23,10 +27,6 @@ Options for any script may be listed using the `-h/--help` flag.
 To reproduce analysis and figures presented in the paper [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning](https://doi.org/10.1038/s41592-019-0687-1), use the scripts in `publication_analysis/`.
 
 Pre-trained models are released with this repo. An alternative use case would be to train / re-train a new model in the `train/` code and make new predictions using the `predict/` code. 
-
-### Model updates
-
-We identified an issue in the original datasets used to train the model published in [Biophysical prediction of protein-peptide interactions and signaling networks using machine learning](https://doi.org/10.1038/s41592-019-0687-1). We have released corrected datasets on [figshare (doi:10.6084/m9.figshare.22105529)](https://doi.org/10.6084/m9.figshare.22105529) (published on February 16, 2023), and replaced the original models released with this repo with corrected ones (on January 9, 2023). Please verify that you use the corrected models for all predictions (see documentation in `predict/`).
 
 ## Data
 
